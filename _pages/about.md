@@ -7,8 +7,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-## About Me
-
 I am a Natural Language Processing Engineer with expertise in computational linguistics, artificial intelligence, and machine learning. My passion lies at the intersection of language, cognition, and computation, where I develop AI-driven solutions for text analysis, authorship detection, and sentiment analysis.
 
 Currently, I am pursuing an M.S. in Human Language Technology at the University of Arizona, where my studies focus on data science, machine learning, and AI development. My work spans linguistic data annotation, transformer-based NLP models, and software engineering. I have hands-on experience with Python, C++, C#, scikit-learn, NLTK, and PyTorch, along with software development methodologies such as SDLC, requirements analysis, and cross-functional teamwork.
