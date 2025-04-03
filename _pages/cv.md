@@ -63,7 +63,7 @@ University of California, Davis
 - NLTK
 - C++
 - C#
-- R
+- Hugging Face Transformers
 - Natural Language Processing (NLP)
 - Large Language Models (LLMs)
 - Information Retrieval
