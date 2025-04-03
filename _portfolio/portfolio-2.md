@@ -67,4 +67,4 @@ To enhance sarcasm detection, future research should focus on:
 - **Julian Rambob**  
 - **Jennifer Haliewicz**  
 
-This research underscores the difficulty of sarcasm detection and the limitations of standard NLP models in handling nuanced expressions. While our dataset improved logistic regression performance, the results highlight the need for advanced contextual learning methods to fully capture sarcasm's complexities. 🚀
+This research underscores the difficulty of sarcasm detection and the limitations of standard NLP models in handling nuanced expressions. While our dataset improved logistic regression performance, the results highlight the need for advanced contextual learning methods to fully capture sarcasm's complexities. 
