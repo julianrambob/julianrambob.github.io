@@ -1,0 +1,105 @@
+---
+title: "Small Corpus Sarcasm Detection"  
+excerpt: "Exploring the impact of high-quality training data on logistic regression-based sarcasm classification.<br/><img src='/images/sarcasm_detection_image.png'>"  
+collection: portfolio  
+---
+
+<h3>Overview</h3>
+
+<p>Sarcasm detection poses a unique challenge in sentiment analysis, as even humans sometimes struggle to recognize sarcastic tones. This project aims to address that difficulty by constructing a specialized dataset tailored for sarcasm detection. By compiling data from multiple existing English corpora, including a corpus explicitly labeled for sarcasm, we seek to enhance model performance in recognizing sarcastic expressions.</p>
+
+<p>Once the dataset is assembled, we will compare logistic regression's ability to classify sarcasm both with and without this dataset, evaluating the impact of high-quality training data on model accuracy.</p>
+
+<h3>Novelty of the Project</h3>
+
+<p>This project introduces several novel contributions:</p>
+<ul>
+  <li>A newly created sarcasm detection dataset sourced from various internet platforms, including blogs, Reddit, and other popular websites. This ensures the dataset remains timely and reflective of contemporary sarcastic expressions.</li>
+  <li>The dataset includes sarcastic phrases commonly found in social media and online forums, making it a valuable resource for training machine-learning models.</li>
+  <li>A comparative analysis of logistic regression performance with and without the new dataset demonstrates how targeted data collection improves sarcasm detection in sentiment analysis.</li>
+</ul>
+
+<h3>Motivation</h3>
+
+<p>Sarcasm is notoriously difficult to detect, as it often depends on contextual cues that are not explicitly stated in text. Our project seeks to improve sarcasm detection by investigating which types of text and features enhance sentiment analysis models. By leveraging internet-based corpora, we aim to identify patterns that improve sarcasm classification.</p>
+
+<h3>Challenges</h3>
+
+<ul>
+  <li><strong>Limited Availability of Up-to-Date Corpora:</strong> Many large-scale corpora (e.g., Brown Corpus) are outdated and do not reflect modern sarcasm usage. Supplementing our dataset with web-scraped data was necessary to ensure relevance.</li>
+  <li><strong>Choosing an Optimal Model for Sarcasm Detection:</strong> While some models perform well in sentiment analysis, it is unclear whether they effectively detect sarcasm. We evaluate whether a traditionally weaker model in sentiment analysis, such as logistic regression, improves significantly with better training data.</li>
+  <li><strong>Feature Selection:</strong> Sarcasm is not always linked to specific syntactic structures, vocabulary, or other explicit linguistic markers. Context plays a crucial role, raising the question of how best to incorporate contextual features into our models.</li>
+</ul>
+
+<h3>Results</h3>
+
+<table border="1">
+  <thead>
+    <tr>
+      <th><strong>Model</strong></th>
+      <th><strong>Accuracy</strong></th>
+      <th><strong>Precision</strong></th>
+      <th><strong>Recall</strong></th>
+      <th><strong>F1 Score</strong></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Logistic Regression</strong></td>
+      <td>63.16%</td>
+      <td>61.06%</td>
+      <td>65.80%</td>
+      <td>63.34%</td>
+    </tr>
+    <tr>
+      <td><strong>Logistic Regression + BERTVectorizer</strong></td>
+      <td>62.41%</td>
+      <td>61.38%</td>
+      <td>60.10%</td>
+      <td>60.73%</td>
+    </tr>
+    <tr>
+      <td><strong>Pretrained BERT Model</strong></td>
+      <td>56.64%</td>
+      <td>62.72%</td>
+      <td>32.87%</td>
+      <td>43.13%</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Without the BERTVectorizer, logistic regression achieved an accuracy of 63.16%, a precision of 61.06%, a recall of 65.80%, and an F1 score of 63.34%. Surprisingly, adding BERT embeddings slightly reduced performance across all metrics, suggesting redundancy or interference with existing feature representations.</p>
+
+<p>The pretrained BERT model performed significantly worse, with an accuracy of 56.64% and an F1 score of 43.13%. This result suggests that general-purpose pretrained models may struggle with sarcasm detection unless fine-tuned on domain-specific data. The low recall (32.87%) indicates that BERT frequently failed to detect sarcastic expressions, likely due to the model's lack of conversational and contextual understanding.</p>
+
+<p>Our dataset was balanced (50% sarcastic, 50% non-sarcastic), ensuring that our results were not skewed by class imbalances. However, the challenges encountered highlight the need for dataset-specific adaptations in sarcasm detection tasks.</p>
+
+<h3>Error Analysis</h3>
+
+<p>An in-depth error analysis on the test set reveals why certain models struggled. The pretrained BERT model exhibited a high false negative rate, often failing to detect sarcasm when external knowledge or tone was required. It also produced false positives when exaggerated language or hyperbole led to misclassification.</p>
+
+<p>Similarly, the feature-union-based logistic regression model did not significantly reduce these errors. While traditional TF-IDF and POS-based features contributed valuable signals, their integration with BERT embeddings may have diluted their effectiveness, leading to minor performance degradation.</p>
+
+<p>One interesting finding is that certain words or phrases in the dataset, such as <strong>"Actually"</strong>, appeared frequently in both sarcastic and non-sarcastic contexts. Out of 24 sarcastic sentences beginning with "Actually," 27 non-sarcastic ones began the same way. This overlap may have confused the models, highlighting the difficulty of sarcasm detection without deeper contextual cues.</p>
+
+<h3>Future Improvements</h3>
+
+<p>To enhance sarcasm detection, future research should focus on:</p>
+<ul>
+  <li>Incorporating contextual embeddings to better capture the meaning behind sarcastic statements.</li>
+  <li>Exploring handcrafted features designed specifically for sarcasm detection.</li>
+  <li>Expanding the dataset with more diverse examples and longer conversational contexts to improve model generalization.</li>
+</ul>
+
+<h3>Code</h3>
+
+<p><a href="https://github.com/julianrambob/sarcasm-detection-project">GitHub Repository</a></p>
+
+<h3>Contributors</h3>
+
+<ul>
+  <li><strong>Julian Rambob</strong></li>
+  <li><strong>Jennifer Haliewicz</strong></li>
+</ul>
+
+<p>This research underscores the difficulty of sarcasm detection and the limitations of standard NLP models in handling nuanced expressions. While our dataset improved logistic regression performance, the results highlight the need for advanced contextual learning methods to fully capture sarcasm's complexities.</p>
