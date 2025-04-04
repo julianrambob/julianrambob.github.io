@@ -7,7 +7,6 @@ redirect_from:
   - /about/
   - /about.html
 ---
-# About Me
 
 Hi! I'm Julian from Sacramento, CA. I am Natural Language Processing (NLP) Engineer with a strong foundation in computational linguistics, artificial intelligence, and machine learning. My professional journey has been driven by my fascination with language, cognition, and computation, where I have had the privilege to design and develop cutting-edge AI-driven solutions for complex challenges in text analysis, authorship detection, and sentiment analysis. I am currently pursuing a Master’s degree in Human Language Technology at the University of Arizona, and will graduate in May 2025. Through this program, I am gaining deep insights into data science, machine learning, and AI development, particularly within the NLP space.
 
