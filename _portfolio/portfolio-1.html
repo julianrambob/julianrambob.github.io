@@ -34,7 +34,7 @@ A logistic regression classifier is employed to differentiate between authentic 
 
 <h3>Classifier-Guided Fine-Tuning</h3>
 <p>
-To enhance the LLM’s ability to deceive the classifier, we introduce reinforcement learning. The classifier’s prediction probabilities are used to rank generated texts: mimic texts that are more likely to be classified as authentic are treated as preferred responses, while those with lower probabilities are labeled as non-preferred. This feedback is then used to fine-tune the Llama3-8b model through Direct Preference Optimization (DPO) using Hugging Face’s reinforcement learning framework. The fine-tuned model is expected to generate increasingly deceptive texts with each iteration, mimicking the target author more effectively.
+To enhance the LLM’s ability to deceive the classifier, we introduce reinforcement learning. The classifier’s prediction probabilities are used to rank generated texts: mimic texts that are more likely to be classified as authentic are treated as preferred responses, while those with lower probabilities are labeled as non-preferred. This feedback is then used to fine-tune the Llama3-8b model through Direct Preference Optimization (DPO) and Proximal Policy Optimization using Hugging Face’s reinforcement learning framework. The fine-tuned model is expected to generate increasingly deceptive texts with each iteration, mimicking the target author more effectively.
 </p>
 
 <h3>Iterative Experimentation</h3>
@@ -64,7 +64,7 @@ For authorship classification, the project uses a custom <code>PipelineWrapper</
 </p>
 
 <p>
-In addition to predictive modeling, the project introduces a fine-tuning module that incorporates reinforcement learning with human feedback (RLHF) to further refine the LLM’s ability to mimic an author’s writing style. Using PPO (Proximal Policy Optimization) through the <code>trl</code> library, the model is trained to produce increasingly authentic writing samples, guided by feedback from the classifier. This creates a feedback loop where the classifier’s predictions directly inform the LLM’s training, enhancing its ability to generate text that mirrors the target author’s voice.
+In addition to predictive modeling, the project introduces a fine-tuning module that incorporates reinforcement learning with the classifier's feedback to further refine the LLM’s ability to mimic an author’s writing style. Using PPO (Proximal Policy Optimization) through the <code>trl</code> library, the model is trained to produce increasingly authentic writing samples, guided by feedback from the classifier. This creates a feedback loop where the classifier’s predictions directly inform the LLM’s training, enhancing its ability to generate text that mirrors the target author’s voice.
 </p>
 
 <p>
