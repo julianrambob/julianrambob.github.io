@@ -110,7 +110,6 @@ collection: portfolio
     <h4>Logistic Regression Classification with BERT-based feature vector</h4>
     <p><code>sarcasm_logistic_regression.py</code> prepares the text data for training a BERT-based classifier and Logistic Regression classifier using the Hugging Face Transformers library. It loads a pre-trained BERT tokenizer and tokenizes the cleaned text from the combined dataset. The dataset is split into training, validation, and test sets using <code>train_test_split</code>. Each set is converted into a format suitable for BERT by extracting the <code>input_ids</code> and <code>attention_mask</code> from the tokenized data and converting them into tensor format. A custom <code>SentimentDataset</code> class is defined to handle the data in the format required by the PyTorch model. The model itself is a BERT model for sequence classification (<code>BertForSequenceClassification</code>), initialized with 3 output labels. Training parameters such as the number of epochs, batch size, and learning rate are set using the <code>TrainingArguments</code> class. A <code>Trainer</code> is instantiated to manage the training process. The model is then trained and evaluated using the validation and test datasets, and evaluation results are printed for metrics such as accuracy and loss.</p>
 
-</body>
 
 <h3>Contributors</h3>
 
